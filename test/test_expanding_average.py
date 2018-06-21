@@ -10,7 +10,7 @@ def check_avg(df_, season, team, stats):
     # use index [1:] because first value is na
     diff = np.abs(df[avg_stats].values[1:] - avg[stats].values[1:])
     by_stat = np.all(diff<1e-4, axis=0)
-    print(season, team, np.argwhere(by_stat == False))
+    #print(season, team, np.argwhere(by_stat == False)) # debug print
     return(np.all(diff<1e-4))
 
 class TestExpandingAverage(unittest.TestCase):
